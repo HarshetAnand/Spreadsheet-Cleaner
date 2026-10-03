@@ -2,9 +2,7 @@ streamlit
 pandas
 numpy
 openpyxl
-faker
-python-dateutil
-openai
+openai>=1.0
 plotly
 phonenumbers
 reportlab
