@@ -43,24 +43,25 @@ The application evaluates data quality across four dimensions:
 - **Validity:** Adherence to expected data patterns
 
 Overall scores fall into four categories:
-- 80-100: Excellent quality
-- 60-79: Good quality with minor issues
-- 40-59: Fair quality, needs attention
-- Below 40: Poor quality, requires significant cleaning
+
+- **80-100:** Excellent quality
+- **60-79:** Good quality with minor issues
+- **40-59:** Fair quality, needs attention
+- **Below 40:** Poor quality, requires significant cleaning
 
 ## Setup
 
 Install dependencies:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 Run locally:
 
-\`\`\`bash
+```bash
 streamlit run spreadsheet_cleaner.py
-\`\`\`
+```
 
 Optionally provide an OpenAI API key in the sidebar for AI-generated insights.
 
