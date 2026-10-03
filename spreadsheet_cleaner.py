@@ -813,12 +813,6 @@ def create_download_link(df: pd.DataFrame, filename: str) -> bytes:
         df.to_excel(writer, index=False, sheet_name='Cleaned_Data')
     
     return output.getvalue()
-    """Create downloadable Excel file"""
-    output = io.BytesIO()
-    with pd.ExcelWriter(output, engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name='Cleaned_Data')
-    
-    return output.getvalue()
 
 def main():
     # Header
