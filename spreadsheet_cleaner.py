@@ -417,9 +417,6 @@ class AdvancedSpreadsheetCleaner:
             for pattern, replacement in abbreviation_map.items():
                 clean_col = re.sub(pattern, replacement, clean_col, flags=re.IGNORECASE)
             
-            # Ensure proper title case after replacements
-            clean_col = clean_col.title()
-            
             # Handle duplicate column names
             original_clean = clean_col
             counter = 1
@@ -602,7 +599,7 @@ def generate_ai_summary(df: pd.DataFrame, analysis: Dict[str, Any], api_key: str
         tone_instruction = tone_instructions.get(tone, tone_instructions["Professional"])
         
         # AI-powered summary with tone customization
-        openai.api_key = api_key
+        client = openai.OpenAI(api_key=api_key)
         
         base_prompt = f"""
         Analyze this spreadsheet data and provide a summary in a {tone.lower()} tone.
@@ -628,7 +625,7 @@ def generate_ai_summary(df: pd.DataFrame, analysis: Dict[str, Any], api_key: str
             Additionally, provide 1-2 specific, actionable suggestions for improving this dataset's quality or usefulness.
             """
         
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": base_prompt}],
             max_tokens=200,
