@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 
 # Page config
 st.set_page_config(
-    page_title="🧽 Clean My Spreadsheet Pro",
+    page_title="🧽 Spreadsheet Cleaner",
     page_icon="🧽",
     layout="wide",
     initial_sidebar_state="collapsed"
