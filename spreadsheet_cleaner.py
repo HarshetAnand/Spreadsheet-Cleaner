@@ -427,7 +427,7 @@ class AdvancedSpreadsheetCleaner:
             new_columns.append(clean_col)
         
         df.columns = new_columns
-        self.cleaning_summary.append(f"✅ Cleaned {len(df.columns)} column headers with {len([c for c in new_columns if c != df.columns[new_columns.index(c)]])} improvements")
+        self.cleaning_summary.append(f"✅ Cleaned {len(df.columns)} column headers")
         return df
     
     def remove_duplicates(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -818,7 +818,7 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🧽 Clean My Spreadsheet Pro</h1>
+        <h1>🧽 Spreadsheet Cleaner</h1>
         <p>Advanced data cleaning with AI-powered insights and quality scoring!</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1210,7 +1210,7 @@ def main():
     
     # Footer with enhanced features
     st.markdown("---")
-    st.markdown("### 🚀 What This Pro Version Does")
+    st.markdown("### 🚀 What This Tool Does")
     
     col1, col2, col3, col4 = st.columns(4)
     
@@ -1275,32 +1275,6 @@ def main():
         - **60-79**: Good with minor issues
         - **40-59**: Fair, needs attention
         - **Below 40**: Poor, requires significant cleaning
-        """)
-    
-    # Feedback section
-    st.markdown("### 📧 Feedback & Support")
-    
-    feedback_col1, feedback_col2, feedback_col3 = st.columns(3)
-    
-    with feedback_col1:
-        st.markdown("""
-        **🐛 Found a Bug?**
-        Report issues and we'll fix them quickly.
-        Your feedback helps us improve!
-        """)
-    
-    with feedback_col2:
-        st.markdown("""
-        **💡 Feature Request?**
-        Suggest new cleaning features or 
-        improvements you'd like to see.
-        """)
-    
-    with feedback_col3:
-        st.markdown("""
-        **🚀 Enterprise?**
-        Need custom features, API access,
-        or white-label solutions?
         """)
 
 if __name__ == "__main__":
